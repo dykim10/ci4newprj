@@ -1,0 +1,7 @@
+# CodeIgniter 4 관련 Git 무시 파일 설정
+/vendor
+/writable/*
+/.env
+/node_modules
+/tests/*
+/public/build/*
