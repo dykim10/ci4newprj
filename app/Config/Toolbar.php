@@ -119,4 +119,6 @@ class Toolbar extends BaseConfig
     public array $watchedExtensions = [
         'php', 'css', 'js', 'html', 'svg', 'json', 'env',
     ];
+
+    public $enabled = true;
 }
