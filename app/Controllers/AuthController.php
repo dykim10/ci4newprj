@@ -49,7 +49,7 @@ class AuthController extends Controller
                     'userName'   => $result['user']->userName, // userId로 저장
                     'userEmail'    => $result['user']->userEmail,
                     'userLastLoginDt'    => $result['user']->userLastLoginDt,
-                    'logged_in' => true
+                    'isLoggedIn' => true
                 ]);
 
                 return redirect()->to('/dashboard');
