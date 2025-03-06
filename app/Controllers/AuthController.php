@@ -34,7 +34,7 @@ class AuthController extends Controller
             $userId = $this->request->getPost('userId');
             $userPwd = $this->request->getPost('userPassword');
 
-            log_message("debug", "로그인시도 - userId: {$userId}, userPwd : {$userPwd}");
+            log_message("debug", "로그인 시도 - userId: {$userId}, userPwd : {$userPwd}");
 
             // AuthService를 통해 로그인 검증
             $result = $this->authService->loginUser($userId, $userPwd);
@@ -45,7 +45,7 @@ class AuthController extends Controller
                 // 세션 저장
                 session()->set([
                     'uuid'     => $result['user']->uuid,
-                    'userId'   => $result['user']->username, // userId로 저장
+                    'userId'   => $result['user']->user_name, // userId로 저장
                     'email'    => $result['user']->email,
                     'logged_in' => true
                 ]);

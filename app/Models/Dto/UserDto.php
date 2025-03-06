@@ -1,26 +1,34 @@
 <?php
 
-namespace App\Models\DTOs;
+namespace App\Models\Dto;
 
 class UserDTO
 {
-    public string $uuid;
-    public string $username;
-    public string $email;
+    public string $userUuid;
+    public string $userName;
+    public string $userId;
+    public string $userEmail;
+    public string $userLastLoginDt;
 
     public function __construct(array $data)
     {
-        $this->uuid = $data['uuid'] ?? '';
-        $this->username = $data['username'] ?? '';
-        $this->email = $data['email'] ?? '';
+        $this->userUuid = $data['user_uuid'] ?? '';
+        $this->userId = $data['user_id'] ?? '';
+        $this->userName = $data['user_name'] ?? '';
+        $this->userEmail = $data['user_email'] ?? '';
+        $this->userLastLoginDt = $data['user_last_login_dt'] ?? '';
+        $this->userPassword = $data['user_password'] ?? '';
     }
 
     public function toArray(): array
     {
         return [
-            'uuid'     => $this->uuid,
-            'username' => $this->username,
-            'email'    => $this->email
+            'userUuid'          => $this->userUuid,
+            'userId'            => $this->userId,
+            'userName'          => $this->userName,
+            'userEmail'         => $this->userEmail,
+            'userPassword'      => $this->userPassword,
+            'userLastLoginDt'   => $this->userLastLoginDt
         ];
     }
 }
