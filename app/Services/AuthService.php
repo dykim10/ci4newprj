@@ -20,12 +20,13 @@ class AuthService
     public function loginUser(string $userId, string $userPwd): array
     {
         $user = $this->userModel->findByUserId($userId);
-
+        //log_message("debug", json_encode($user));
         if (!$user) {
             return ['success' => false, 'message' => '사용자를 찾을 수 없습니다.'];
         }
 
-        if (!password_verify($userPwd, $user->userPassword)) {
+        log_message("debug", "pwd => input : {$userPwd} , db => {$user->user_password}");
+        if (!password_verify($userPwd, $user->user_password)) {
             return ['success' => false, 'message' => '잘못된 비밀번호입니다.'];
         }
 

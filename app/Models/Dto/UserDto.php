@@ -17,7 +17,6 @@ class UserDTO
         $this->userName = $data['user_name'] ?? '';
         $this->userEmail = $data['user_email'] ?? '';
         $this->userLastLoginDt = $data['user_last_login_dt'] ?? '';
-        $this->userPassword = $data['user_password'] ?? '';
     }
 
     public function toArray(): array
@@ -27,7 +26,6 @@ class UserDTO
             'userId'            => $this->userId,
             'userName'          => $this->userName,
             'userEmail'         => $this->userEmail,
-            'userPassword'      => $this->userPassword,
             'userLastLoginDt'   => $this->userLastLoginDt
         ];
     }
